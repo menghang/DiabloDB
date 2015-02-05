@@ -10,7 +10,7 @@ return [
     |
     */
     'sitename' => 'Diablo 3 Database',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Registration Enabled
@@ -31,10 +31,18 @@ return [
     | clan name enter it here.
     */
     'clan' => '',
-    
+
     'battlenet' => [
 
-        'region' => 'eu', // valid options: EU, US
-        'api_key' => '',
+        /* Region: Valid Options: eu, us, kr, tw */
+        'region' => 'eu',
+
+        /* Locale:
+         *  Valid Options
+         *      Region EU: en_GB, de_DE, es_ES, fr_FR, it_IT, pl_PL, pt_PT, ru_RU */
+        'locale' => 'en_GB',
+
+        /* If you don't have an API key register for one here: https://dev.battle.net/ */
+        'api_key' => 'INSERT_KEY_HERE',
     ]
 ];
