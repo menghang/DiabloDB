@@ -9,6 +9,7 @@ The database uses Laravel framework so the requirements of that apply, we recomm
 ## Installation ##
 
 * Download the files to the appropriate root folder
+* Run a "composer install" to get required dependencies.
 * Create a .env file (copy .env.example and copy in your db details) or you can edit app/config/database.php if required.
 * run "php artisan migrate"
 * run "php artisan db:seed"
