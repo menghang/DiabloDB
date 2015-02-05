@@ -30,7 +30,7 @@ class Api
      * Builds the base url for requested region.
      * @return string
      */
-    public function buildBaseUrl()
+    private function buildBaseUrl()
     {
         return "https://{$this->region}.api.battle.net/d3/";
     }
@@ -39,10 +39,25 @@ class Api
      * Build a url to request user info.
      * @return string
      */
-    public function buildProfileUrl($btag)
+    private function buildProfileUrl($btag)
     {
         $url = $this->buildBaseUrl();
         $url .= "profile/{$btag}/?locale={$this->locale}&apikey={$this->api_key}";
+        return $url;
+    }
+
+    /**
+     * Build a url to request character information.
+     *
+     * @param $btag
+     * @param $charid
+     *
+     * @return string
+     */
+    private function buildCharUrl($btag, $charid)
+    {
+        $url = $this->buildBaseUrl();
+        $url .= "profile/{$btag}/hero/{$charid}?locale={$this->locale}&apikey={$this->api_key}";
         return $url;
     }
 
@@ -59,5 +74,17 @@ class Api
     public function getProfileInfo($btag)
     {
         $url = $this->buildProfileUrl($btag);
+        return $this->requestData($url);
+    }
+
+    public function getCharacterInfo($btag, $id)
+    {
+        $url = $this->buildCharUrl($btag, $id);
+        return $this->requestData($url);
+    }
+
+    private function requestData($url)
+    {
+
     }
 }
