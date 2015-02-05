@@ -19,6 +19,8 @@ Route::get('login', 'Auth\AuthController@getLogin');
 Route::get('logout', 'Auth\AuthController@getLogout');
 Route::get('register', 'Auth\AuthController@getRegister');
 
+Route::get('character/{$name}', 'CharacterController@view');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
