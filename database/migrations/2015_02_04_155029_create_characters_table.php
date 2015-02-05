@@ -5,32 +5,31 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCharactersTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('users', function(Blueprint $table)
-		{
-			$table->increments('id');
-			$table->string('name');
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('characters', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('name');
             $table->string('level');
-			$table->integer('owner_id')->default(0);
-			$table->rememberToken();
-			$table->timestamps();
-		});
-	}
+            $table->integer('season')->default(0);
+            $table->integer('owner_id')->default(0);
+            $table->timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('characters');
-	}
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('characters');
+    }
 }
