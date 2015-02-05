@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: DiabloDB
+        psr4_prefix: DiabloDB
+        src_path: app
