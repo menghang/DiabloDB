@@ -1,0 +1,23 @@
+/* Flat UI Colors */
+.monk, .wizard, .barbarian, .demon-hunter, .crusader, .witch-doctor {
+  color: #ecf0f1; }
+
+.monk {
+  background-color: #9d722d; }
+
+.wizard {
+  background-color: #232b36; }
+
+.demon-hunter {
+  background-color: #322630; }
+
+.barbarian {
+  background-color: #442e23; }
+
+.witch-doctor {
+  background-color: #9c6f2b; }
+
+.crusader {
+  background-color: #cdc4b3; }
+
+/*# sourceMappingURL=diablodb.css.map */
