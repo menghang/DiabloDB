@@ -2,6 +2,8 @@
 
 namespace DiabloDB\Battlenet;
 
+use GuzzleHttp\Client as Guzzle;
+
 class Api
 {
     /**
@@ -70,21 +72,29 @@ class Api
     /**
      * Retrieve the profile of a user given their battletag.
      * @param string $btag
+     * @return mixed
      */
     public function getProfileInfo($btag)
     {
         $url = $this->buildProfileUrl($btag);
-        return $this->requestData($url);
+        return $this->requestJson($url);
     }
 
     public function getCharacterInfo($btag, $id)
     {
         $url = $this->buildCharUrl($btag, $id);
-        return $this->requestData($url);
+        return $this->requestJson($url);
     }
 
-    private function requestData($url)
+    /**
+     * Request json data from a URL.
+     * @param string $url URL.
+     * @return mixed
+     */
+    private function requestJson($url)
     {
-
+        $client = new Guzzle();
+        $response = $client->get($url);
+        return $response->json();
     }
 }
