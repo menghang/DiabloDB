@@ -9,7 +9,7 @@ The database uses Laravel framework so the requirements of that apply, we recomm
 ## Installation ##
 
 * Download the files to the appropriate root folder
-* Edit app/config/database.php with your sql preferences.
+* Create a .env file (copy .env.example and copy in your db details) or you can edit app/config/database.php if required.
 * run "php artisan migrate"
 * run "php artisan db:seed"
 * Open the app in your browser and go to /register and create your account.
