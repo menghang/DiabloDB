@@ -1,0 +1,13 @@
+@import "diablo";
+@import "flat_ui_colors";
+
+.monk, .wizard, .barbarian, .demon-hunter, .crusader, .witch-doctor {
+    color: $flat_ui_clouds;
+}
+
+.monk { background-color: $monk; }
+.wizard { background-color: $wizard; }
+.demon-hunter { background-color: $demon_hunter; }
+.barbarian { background-color: $barb; }
+.witch-doctor { background-color: $witch_doctor; }
+.crusader { background-color: $crusader; }
