@@ -93,7 +93,7 @@ class RoleAssignCommand extends Command
     /**
      * Builds the userlist into an array suitable for tabular output.
      *
-     * @param $users
+     * @param \Illuminate\Database\Eloquent\Collection $users
      *
      * @return array
      */
@@ -125,7 +125,7 @@ class RoleAssignCommand extends Command
 
     /**
      * Build Roles table.
-     * @param $roles
+     * @param \Illuminate\Database\Eloquent\Collection $roles
      * @return array
      */
     public function buildRoleTable($roles)
@@ -140,7 +140,7 @@ class RoleAssignCommand extends Command
 
     /**
      * Get the role id
-     * @return integer $role_id
+     * @return string $role_id
      */
     public function getRoleId()
     {
