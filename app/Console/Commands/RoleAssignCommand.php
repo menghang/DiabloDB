@@ -109,7 +109,7 @@ class RoleAssignCommand extends Command
 
     /**
      * Get the user id.
-     * @return string
+     * @return integer
      */
     public function getUserId()
     {
@@ -120,7 +120,7 @@ class RoleAssignCommand extends Command
 
         $user_id = $this->ask('Which user would you like to assign a role for? [1,2,...]');
 
-        return $user_id;
+        return (int)$user_id;
     }
 
     /**
