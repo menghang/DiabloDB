@@ -1,7 +1,8 @@
-<?php namespace DiabloDB\Commands;
+<?php
 
-abstract class Command {
+namespace DiabloDB\Commands;
 
+abstract class Command
+{
 	//
-
 }

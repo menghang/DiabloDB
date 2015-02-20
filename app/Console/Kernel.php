@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         'DiabloDB\Console\Commands\RoleAssignCommand',
+        'DiabloDB\Console\Commands\CharactersUpdateCommand',
     ];
 
     /**
