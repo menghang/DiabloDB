@@ -22,16 +22,6 @@ return [
     */
     'registration_enabled' => true,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Clan
-    |--------------------------------------------------------------------------
-    |
-    | If you would like to allow the app to retrieve all clan members for a given
-    | clan name enter it here.
-    */
-    'clan' => '',
-
     'battlenet' => [
 
         /* Region: Valid Options: eu, us, kr, tw */
