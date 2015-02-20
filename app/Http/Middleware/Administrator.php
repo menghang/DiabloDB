@@ -3,8 +3,8 @@
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class Authenticate {
-
+class Administrator
+{
     /**
      * The Guard implementation.
      *
