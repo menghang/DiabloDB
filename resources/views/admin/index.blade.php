@@ -10,7 +10,7 @@ function actions($id)
 @section('content')
     <h1>Administration</h1>
 
-    <h2>Members<span class="pull-right"><button class="btn btn-primary">Add User</button></span></h2>
+    <h2>Members<span class="pull-right"><button class="btn btn-primary">Add Member</button></span></h2>
     @if(isset($members) && !empty($members))
         <table class="table">
         @foreach($members as $member)
