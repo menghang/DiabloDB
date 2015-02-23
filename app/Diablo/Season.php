@@ -13,7 +13,19 @@ class Season
 
     public function getSeasonFromDate($date)
     {
+        if ($date == null) {
+            return $this->getCurrentSeason();
+        }
 
+        $date = new DateTime($date);
+
+        foreach ($this->seasons as $i => $season) {
+            $to = new DateTime($season['to']);
+            if ($to >= $date) {
+                return $i;
+            }
+        }
+        return null;
     }
 
     public function getCurrentSeason()
