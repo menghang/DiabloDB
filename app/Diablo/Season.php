@@ -11,7 +11,7 @@ class Season
         ]
     ];
 
-    public function getSeasonFromDate($date)
+    public function getSeason($date = null)
     {
         if ($date == null) {
             return $this->getCurrentSeason();
@@ -28,7 +28,7 @@ class Season
         return null;
     }
 
-    public function getCurrentSeason()
+    private function getCurrentSeason()
     {
         return 2; // TODO: Consider value in grabbing this dynamically rather than via app updates.
     }
