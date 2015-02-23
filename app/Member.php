@@ -20,7 +20,8 @@ class Member extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'battletag'];
+    protected $fillable = ['name', 'battletag', 'paragon', 'paragon_hc', 'paragon_curr_season', 'paragon_curr_season_hc'];
+
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -28,6 +29,23 @@ class Member extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function getParagon($seasonal = null, $hardcore = null)
+    {
+        if (!isset($seasonal)) {
+            if (isset($hardcore)) {
+                return $this->paragon_hc;
+            } else {
+                return $this->paragon;
+            }
+        } else {
+            if (isset($hardcore)) {
+                return $this->paragon_curr_season_hc;
+            } else {
+                return $this->paragon_curr_season;
+            }
+        }
+    }
 
     /**
      * Members characters
