@@ -34,5 +34,16 @@ return [
 
         /* If you don't have an API key register for one here: https://dev.battle.net/ */
         'api_key' => 'INSERT_KEY_HERE',
+    ],
+
+    /* If you wish to set up cron to automatically update characters, enter the time frequencies below */
+    'schedule' => [
+
+        // Valid options: 'hourly', 'daily', 'weekly', 'monthly', 'yearly'
+        //                'everyFiveMinutes', 'everyTenMinutes', 'everyThirtyMinutes'
+
+        'members' => 'daily',
+
+        'characters' => 'hourly',
     ]
 ];
