@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Exception;
 use DiabloDB\Member;
 
+/**
+ * Class Character
+ * @package DiabloDB
+ */
 class Character extends Model
 {
     /**
