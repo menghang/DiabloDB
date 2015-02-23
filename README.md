@@ -24,6 +24,39 @@ At this point you should be set up as an administrator on the application, pleas
 
 ## Configuration ##
 
-After installation we recommend you then configure your clan settings if you wish for characters to be automatically polled from the blizzard servers.
+Open up config/diablo.php
 
-You will find these settings in app/config/diablo.php, here you will also be able to edit the site(community) name etc.
+Under 'battlenet':
+
+* Edit the sitename to your community name (or whatever you would like to appear in the header).
+* Check your region and locale settings.
+* Enter your API Key (which can be obtained by registering on the blizzard dev portal [here](https://dev.battle.net/) if you do not already have one)
+
+## Updating Members/Characters ##
+
+There are several options for updating members and characters: Cron, Queue, Manual
+
+### Cron ###
+
+> In the config/diablo.php file there are some settings for scheduling characters and members updating, to make these work you will need to add a cron job on your server to run the following
+> 
+> `* * * * * bash -c "cd /path/to/diablodb && php artisan schedule:run"`
+> 
+> valid options for the config file are:
+> 
+> * everyFiveMinutes
+> * everyTenMinutes
+> * everyThirtyMinutes
+> * hourly
+> * daily
+> * weekly
+> * monthly
+> * yearly
+
+### Queue ###
+
+> TBC
+
+### Manual ###
+
+> Members and Characters updates can be triggered manually.  However we recommend using either a cron or queue for general hourly/daily updating etc 
