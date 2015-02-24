@@ -17,11 +17,10 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('battletag');
-            $table->integer('paragon');
-            $table->integer('paragon_hc');
-            $table->integer('paragon_curr_season');
-            $table->integer('paragon_curr_season_hc');
-            $table->rememberToken();
+            $table->integer('paragon')->default(0);
+            $table->integer('paragon_hc')->default(0);
+            $table->integer('paragon_curr_season')->default(0);
+            $table->integer('paragon_curr_season_hc')->default(0);
             $table->timestamps();
         });
     }
