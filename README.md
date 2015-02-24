@@ -2,7 +2,9 @@
 
 DiabloDB is a character database aimed at clans and communities which lists characters in a sortable/filterable list.
 
-## Development Status ##
+## Project Status ##
+
+DEVELOPMENT - We do not currently recommend using the application on live servers, though testing would be appreciated.
 
 This project is still in the relatively early stages of development, if you would like to help contribute please get in touch.
 
