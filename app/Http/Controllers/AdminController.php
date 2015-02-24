@@ -27,7 +27,14 @@ class AdminController extends Controller
     public function index()
     {
         $data = [
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'fields' => [
+                'name' => ['type' => 'text', 'min' => 2, 'max' => 30],
+                'battletag' => ['type' => 'text', 'min' => 4, 'max' => 20],
+            ],
+            'endpoint' => \URL::route('member.post'),
+            'container' => 'memberForm',
+            'button' => 'addMember',
         ];
         return view('admin/index', $data);
     }

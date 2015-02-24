@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    @include('layouts._js')
 </head>
 <body>
     @include('layouts/_nav')
