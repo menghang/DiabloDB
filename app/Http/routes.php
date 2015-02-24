@@ -23,6 +23,8 @@ Route::get('register', 'Auth\AuthController@getRegister');
 
 Route::get('character/{$name}', 'CharacterController@view');
 
+Route::post('members', ['as' => 'member.post', 'uses' => 'ApiController@storeMember']);
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
