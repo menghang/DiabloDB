@@ -35,6 +35,7 @@ class AdminController extends Controller
             'endpoint' => \URL::route('member.post'),
             'container' => 'memberForm',
             'button' => 'addMember',
+            'title' => 'Add Member'
         ];
         return view('admin/index', $data);
     }
