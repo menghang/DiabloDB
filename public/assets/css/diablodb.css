@@ -20,4 +20,9 @@
 .crusader {
   background-color: #cdc4b3; }
 
+/* jQuery UI Overrides */
+.btn-primary.ui-widget {
+  background: #337ab7;
+  font-size: 1em; }
+
 /*# sourceMappingURL=diablodb.css.map */

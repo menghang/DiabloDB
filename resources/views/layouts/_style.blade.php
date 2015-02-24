@@ -1,7 +1,8 @@
 <?php
 $styles = [
         'jquery-ui.structure.min',
-        'jquery-ui.theme.min'
+        'jquery-ui.theme.min',
+        'diablodb'
 ];
 ?>
 @foreach($styles as $js)
