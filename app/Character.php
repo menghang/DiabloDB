@@ -5,6 +5,7 @@ namespace DiabloDB;
 use Illuminate\Database\Eloquent\Model;
 use Exception;
 use DiabloDB\Member;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
  * Class Character
@@ -36,5 +37,30 @@ class Character extends Model
     public function member()
     {
         return $this->belongsTo('Member');
+    }
+
+    public static function updateCharacter($data)
+    {
+        $char = [
+            'name' => $data['name'],
+            'diablo_id' => $data['id'],
+            'level' => $data['level'],
+            'hardcore' => ($data['hardcore'] == "true"),
+        ];
+
+        /* Check if character already exists */
+        try {
+            $character = Character::where('name', $data['name'])->firstOrFail();
+            /* Character Exists - Update */
+            foreach($char as $key => $val) {
+                $character->$key = $val;
+            }
+            $character->save();
+        } catch (ModelNotFoundException $e) {
+            /* Does not exist - Add */
+            Character::create($char);
+        } catch (Exception $e) {
+            \Log::error($e->getMessage());
+        }
     }
 }
