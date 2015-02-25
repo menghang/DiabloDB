@@ -25,7 +25,7 @@ class Api
     {
         $this->region = \Config::get('diablo.battlenet.region');
         $this->locale = \Config::get('diablo.battlenet.locale');
-        $this->api_key = \Config::get('diablo.battlenet.apikey');
+        $this->api_key = \Config::get('diablo.battlenet.api_key');
     }
 
     /**
