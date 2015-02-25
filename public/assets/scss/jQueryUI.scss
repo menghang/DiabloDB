@@ -1,3 +1,7 @@
 /* jQuery UI Overrides */
 
-.btn-primary.ui-widget { background: #337ab7; font-size: 1em; }
+.btn-primary.ui-widget {
+  background: #337ab7;
+  font-size: 0.5em;
+  border: 1px solid #2e6da4;
+}
