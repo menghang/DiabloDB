@@ -68,25 +68,20 @@ if (isset($fields)):
                     }
                 ?>
 
-                /* POST */
-                jQuery.ajax({
-                    url: "{{ $endpoint }}",
-                    type: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        <?php
-                            foreach ($fields as $field => $options)
-                            {
-                                echo "\"{$field}\": post_{$field},";
-                            }
-                        ?>
-                    },
-                    <?php if (isset($success)): ?>
-                        success: <?php echo $success; ?>,
-                    <?php endif; ?>
+                var data = {
+                    _token: "{{ csrf_token() }}",
+                    <?php
+                        foreach ($fields as $field => $options)
+                        {
+                            echo "\"{$field}\": post_{$field},\r\n";
+                        }
+                    ?>
+                };
 
-                    <?php if (isset($error)): ?>
-                        error: <?php echo $error; ?>,
+                /* POST */
+                $.post("{{ $endpoint }}", data, function(data) {
+                    <?php if (isset($success)): ?>
+                    <?php echo $success; ?>
                     <?php endif; ?>
                 });
             }
