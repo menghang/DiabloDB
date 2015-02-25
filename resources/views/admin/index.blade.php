@@ -1,7 +1,7 @@
 <?php
 function actions($id)
 {
-    echo '<button class="btn btn-xs btn-info"><span class="fa fa-pencil"></span> Edit</button> <button class="btn btn-xs btn-danger"><span class="fa fa-times"></span> Delete!</button>';
+    echo '<button class="btn btn-xs btn-primary"><span class="fa fa-pencil"></span> Edit</button> <button class="btn btn-xs btn-danger"><span class="fa fa-times"></span> Delete!</button>';
 }
 ?>
 
