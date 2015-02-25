@@ -20,6 +20,18 @@
 .crusader {
   background-color: #cdc4b3; }
 
+.widget:nth-child(3n-1) {
+  background-color: #9b59b6; }
+
+.widget:nth-child(3n-2) {
+  background-color: #2980b9; }
+
+.widget:nth-child(3n-3) {
+  background-color: #16a085; }
+
+.widget {
+  color: #ecf0f1; }
+
 /* jQuery UI Overrides */
 .btn-primary.ui-widget {
   background: #337ab7;
