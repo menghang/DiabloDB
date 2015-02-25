@@ -3,6 +3,7 @@
 namespace DiabloDB\Http\Controllers;
 
 use \Auth;
+use DiabloDB\Member;
 use DiabloDB\Http\Middleware\Administrator;
 
 /**
@@ -34,8 +35,10 @@ class AdminController extends Controller
             ],
             'endpoint' => \URL::route('member.post'),
             'container' => 'memberForm',
+            'success' => "location.reload();",
             'button' => 'addMember',
-            'title' => 'Add Member'
+            'title' => 'Add Member',
+            'members' => Member::all()
         ];
         return view('admin/index', $data);
     }
