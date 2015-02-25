@@ -73,6 +73,7 @@ if (isset($fields)):
                     url: "{{ $endpoint }}",
                     type: "POST",
                     data: {
+                        _token: "{{ csrf_token() }}",
                         <?php
                             foreach ($fields as $field => $options)
                             {
