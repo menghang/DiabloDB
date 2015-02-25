@@ -1,7 +1,7 @@
 <?php
 function actions($id)
 {
-    echo '<button class="btn btn-info">Edit</button> <button class="btn btn-danger">Delete!</button>';
+    echo '<button class="btn btn-xs btn-info">Edit</button> <button class="btn btn-xs btn-danger">Delete!</button>';
 }
 ?>
 
@@ -21,5 +21,4 @@ function actions($id)
     @else
         You do not have any users at present, please use the create button to add some.
     @endif
-
 @endsection
