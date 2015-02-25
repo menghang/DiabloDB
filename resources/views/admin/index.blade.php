@@ -12,7 +12,7 @@ function actions($id)
 
     <div class="row">
     @foreach($dashboard['counters'] as $widget)
-        <div class="widget"></div>
+        <div class="widget col-xs-12 col-sm-6 col-md-4 col-lg-4"><span class="widget-title">{{ $widget['title'] }}</span>{{ $widget['value'] }}</div>
     @endforeach
     </div>
 @endsection
