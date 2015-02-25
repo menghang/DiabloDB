@@ -43,6 +43,7 @@ class Api
      */
     private function buildProfileUrl($btag)
     {
+        $btag = urlencode($btag);
         $url = $this->buildBaseUrl();
         $url .= "profile/{$btag}/?locale={$this->locale}&apikey={$this->api_key}";
         return $url;
