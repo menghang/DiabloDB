@@ -1,7 +1,7 @@
 <?php
 function actions($id)
 {
-    echo '<button class="btn btn-xs btn-info">Edit</button> <button class="btn btn-xs btn-danger">Delete!</button>';
+    echo '<button class="btn btn-xs btn-info"><span class="fa fa-pencil"></span> Edit</button> <button class="btn btn-xs btn-danger"><span class="fa fa-times"></span> Delete!</button>';
 }
 ?>
 
@@ -10,7 +10,7 @@ function actions($id)
 @section('content')
     <h1>Administration</h1>
 
-    <h2>Members<span class="pull-right"><button id="{{ $button }}" class="btn btn-primary">Add Member</button></span></h2>
+    <h2>Members<span class="pull-right"><button id="{{ $button }}" class="btn btn-primary"><span class="fa fa-plus"></span> Add Member</button></span></h2>
     @include('layouts/_modalForm')
     @if(isset($members) && count($members) > 0)
         <table class="table">
