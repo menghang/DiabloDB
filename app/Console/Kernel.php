@@ -4,10 +4,14 @@ namespace DiabloDB\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Illuminate\Support\Facades\Config;
 
 class Kernel extends ConsoleKernel
 {
+    public $updateFreqency = [
+        'characters' => 'hourly',
+        'members' => 'daily'
+    ];
+
     /**
      * The Artisan commands provided by your application.
      *
@@ -16,12 +20,15 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         'DiabloDB\Console\Commands\RoleAssignCommand',
         'DiabloDB\Console\Commands\CharactersUpdateCommand',
+        'DiabloDB\Console\Commands\MembersUpdateCommand',
+        'DiabloDB\Console\Commands\CharacterUpdateCommand',
+        'DiabloDB\Console\Commands\MemberUpdateCommand',
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  \Illuminate\Console\Scheduling\Schedule $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
@@ -32,21 +39,17 @@ class Kernel extends ConsoleKernel
         ];
 
         /* Update Members */
-        $memberSchedule = \Config::get('diablo.schedule.members');
+        $memberSchedule = $this->updateFreqency['members'];
         if (in_array($memberSchedule, $validMethods)) {
             $schedule->command('MembersUpdateCommand')
                 ->$memberSchedule();
         }
 
         /* Update Characters */
-        $characterSchedule = \Config::get('diablo.schedule.characters');
+        $characterSchedule = $this->updateFreqency['characters'];
         if (in_array($characterSchedule, $validMethods)) {
             $schedule->command('CharactersUpdateCommand')
                 ->$characterSchedule();
         }
-
-        //$schedule->command('inspire')
-        //         ->hourly();
     }
-
 }
