@@ -25,6 +25,10 @@ Route::get('character/{$name}', 'CharacterController@view');
 
 Route::post('members', ['as' => 'member.post', 'uses' => 'ApiController@storeMember']);
 
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('members', ['as' => 'admin.member.list', 'uses' => 'AdminController@members']);
+});
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
