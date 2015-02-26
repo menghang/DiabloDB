@@ -4,6 +4,10 @@ use DiabloDB\Member;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * Class ApiController
+ * @package DiabloDB\Http\Controllers
+ */
 class ApiController extends Controller
 {
     private $request;
@@ -13,6 +17,10 @@ class ApiController extends Controller
         $this->request = $request;
     }
 
+    /**
+     * Store a Member in the database.
+     * @return Response
+     */
     public function storeMember()
     {
         $fields = ['name', 'battletag'];
@@ -26,6 +34,11 @@ class ApiController extends Controller
         return new Response('Member created.', 200);
     }
 
+    /**
+     * Validates the request contains required fields.
+     * @param string|array $fields Array of field(s).
+     * @return boolean
+     */
     public function validateFields($fields)
     {
         foreach($fields as $f) {
