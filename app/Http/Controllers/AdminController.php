@@ -3,8 +3,10 @@
 namespace DiabloDB\Http\Controllers;
 
 use \Auth;
+use DiabloDB\Character;
 use DiabloDB\Member;
 use DiabloDB\Http\Middleware\Administrator;
+use DiabloDB\User;
 
 /**
  * Class AdminController
@@ -27,6 +29,28 @@ class AdminController extends Controller
      */
     public function index()
     {
+        $userCount = User::where('id', '>=', 1)->count();
+        $memberCount = Member::where('id', '>=', 1)->count();
+        $charCount = Character::where('id', '>=', 1)->count();
+
+        $data = [
+            'dashboard' => [
+                'counters' => [
+                    'users'      => ['title' => 'Users', 'value' => $userCount],
+                    'members'    => ['title' => 'Members', 'value' => $memberCount],
+                    'characters' => ['title' => 'Characters', 'value' => $charCount],
+                ]
+            ]
+        ];
+        return view('admin/index', $data);
+    }
+
+    /**
+     * Member listing
+     * @return \Illuminate\View\View
+     */
+    public function members()
+    {
         $data = [
             'user' => Auth::user(),
             'fields' => [
@@ -40,6 +64,6 @@ class AdminController extends Controller
             'title' => 'Add Member',
             'members' => Member::all()
         ];
-        return view('admin/index', $data);
+        return view('admin/members/index', $data);
     }
 }
