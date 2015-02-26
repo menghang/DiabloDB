@@ -1,4 +1,5 @@
 # DiabloDB #
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/taskforcedev/DiabloDB/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/taskforcedev/DiabloDB/?branch=master)
 
 DiabloDB is a character database aimed at clans and communities which lists characters in a sortable/filterable list.
 
