@@ -35,4 +35,12 @@ class CharacterClassTest extends TestCase
             $this->assertEquals($id, $class_id);
         }
     }
+
+    public function testGetClassNameWithoutDisplayArgument()
+    {
+        $id = 4;
+        $name = 'Monk';
+        $class = $this->class->getClassName($id);
+        $this->assertEquals($name, $class);
+    }
 }
