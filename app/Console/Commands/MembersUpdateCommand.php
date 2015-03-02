@@ -3,11 +3,13 @@
 namespace DiabloDB\Console\Commands;
 
 use DiabloDB\Character;
+use DiabloDB\Commands\MemberUpdate;
 use DiabloDB\Member;
 use Illuminate\Console\Command;
 use DiabloDB\Battlenet\Api;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use DiabloDB\Commands\CharacterUpdate;
 
 /**
  * Class MembersUpdateCommand
@@ -48,24 +50,10 @@ class MembersUpdateCommand extends Command
     public function fire()
     {
         $members = Member::all();
-        $api = new Api();
 
         foreach ($members as $member) {
-            $data = $api->getProfileInfo($member->battletag);
-
-            /* Update member paragon levels */
-            $member->paragon = $data['paragonLevel'];
-            $member->paragon_hc = $data['paragonLevelHardcore'];
-            $member->paragon_curr_season = $data['paragonLevelSeason'];
-            $member->paragon_curr_season_hc = $data['paragonLevelSeasonHardcore'];
-            $member->save();
-
-            /* Update members characters */
-            $characters = $data['heroes'];
-            foreach($characters as $char) {
-                //Character::updateCharacter($char);
-                var_dump($char);
-            }
+            $command = new MemberUpdate($member);
+            $command->handle();
         }
     }
 
