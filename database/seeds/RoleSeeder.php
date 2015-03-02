@@ -2,7 +2,7 @@
 
 use DiabloDB\Role;
 
-class RoleSeeder
+class RoleSeeder extends Seeder
 {
     public $roles = ['Administrator', 'Member'];
 
