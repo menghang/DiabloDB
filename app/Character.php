@@ -39,7 +39,7 @@ class Character extends Model
         return $this->belongsTo('Member');
     }
 
-    public static function updateCharacter($data)
+    public static function CreateOrUpdate($data)
     {
         $char = [
             'name' => $data['name'],
