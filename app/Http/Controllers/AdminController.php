@@ -34,11 +34,12 @@ class AdminController extends Controller
         $charCount = Character::where('id', '>=', 1)->count();
 
         $data = [
+            'user' => Auth::user(),
             'dashboard' => [
                 'counters' => [
-                    'users'      => ['title' => 'Users', 'value' => $userCount],
-                    'members'    => ['title' => 'Members', 'value' => $memberCount],
-                    'characters' => ['title' => 'Characters', 'value' => $charCount],
+                    'users'      => ['title' => 'Users', 'value' => $userCount, 'url' => ''],
+                    'members'    => ['title' => 'Members', 'value' => $memberCount, 'url' => ''],
+                    'characters' => ['title' => 'Characters', 'value' => $charCount, 'url' => ''],
                 ]
             ]
         ];
