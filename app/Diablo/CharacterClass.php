@@ -18,7 +18,7 @@ class CharacterClass
             $api = $data['api_name'];
             $display = $data['display'];
 
-            if ($api == $class || $api == $display) {
+            if ($class == $api || $class == $display) {
                 return $id;
             }
         }
