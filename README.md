@@ -9,6 +9,9 @@ DEVELOPMENT - We do not currently recommend using the application on live server
 
 This project is still in the relatively early stages of development, if you would like to help contribute please get in touch.
 
+## Documentation ##
+Documentation can also be found [here](http://diablodb.readthedocs.org/)
+
 ## Requirements ##
 
 The database uses Laravel framework so the requirements of that apply, we recommend a minimum of PHP 5.5
