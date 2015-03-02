@@ -36,6 +36,12 @@ class CharacterClassTest extends TestCase
         }
     }
 
+    public function testGetClassIdWithDisplayName()
+    {
+        $class_id = $this->class->getClassId('Demon Hunter');
+        $this->assertEquals(2, $class_id);
+    }
+
     public function testGetClassNameWithoutDisplayArgument()
     {
         $id = 4;
