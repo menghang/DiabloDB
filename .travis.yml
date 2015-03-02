@@ -8,4 +8,4 @@ install:
   - composer install
   - composer dumpautoload
 
-script: phpunit --coverage-clover=coverage.clover
+script: phpunit --coverage-text
