@@ -17,6 +17,9 @@ class CreateCharactersTable extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->string('level');
+            $table->integer('class');
+            $table->string('diablo_id');
+            $table->integer('hardcore')->default(0);
             $table->integer('season')->default(0);
             $table->integer('owner_id')->default(0);
             $table->timestamps();
