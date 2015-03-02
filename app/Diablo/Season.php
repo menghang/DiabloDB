@@ -1,5 +1,7 @@
 <?php
 
+namespace DiabloDB\Diablo;
+
 class Season
 {
     public $seasons = [
