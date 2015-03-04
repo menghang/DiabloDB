@@ -1,7 +1,7 @@
 <?php
 function actions($id)
 {
-    echo '<button class="btn btn-xs btn-primary"><span class="fa fa-pencil"></span> Edit</button> <button class="btn btn-xs btn-danger"><span class="fa fa-times"></span> Delete!</button>';
+    echo '<button class="btn btn-xs btn-primary"><span class="fa fa-pencil"></span> Edit</button> <button class="btn btn-xs btn-danger"><span class="fa fa-trash-o"></span> Delete!</button>';
 }
 ?>
 
@@ -15,7 +15,11 @@ function actions($id)
     @if(isset($members) && count($members) > 0)
         <table class="table">
             @foreach($members as $member)
-                <tr><td>{{ $member->name }}</td><td>{{ $member->battletag }}</td><td>{{ actions($member->id) }}</td></tr>
+                <tr>
+                    <td>{{ $member->name }}</td>
+                    <td>{{ $member->battletag }}</td>
+                    <td>{{ actions($member->id) }}</td>
+                </tr>
             @endforeach
         </table>
     @else
