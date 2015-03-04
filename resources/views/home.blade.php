@@ -2,7 +2,7 @@
 
 @section('content')
     @if(isset($characters))
-        <table class="table table-responsive">
+        <table class="table table-responsive sortable">
         <thead>
             <tr>
                 <th>Character</th>
@@ -18,8 +18,20 @@
                 <td>{{ $c->name }}</td>
                 <td>{{ $ClassHelper->getClassName($c->class) }}</td>
                 <td>{{ $c->level }}</td>
-                <td><?php if ($c->hardcore == 1) { echo '<span class="fa fa-h-square"></span>'; } ?></td>
-                <td><?php if ($c->season == 1) { echo '<span class="fa fa-leaf"></span>'; } ?></td>
+
+                <?php if ($c->hardcore == 1) {
+                    echo '<td sorttable_customkey="1"><span class="fa fa-h-square"></span></td>';
+                } else {
+                    echo '<td sorttable_customkey="0"></td>';
+                }
+                ?>
+
+                <?php if ($c->season == 1) {
+                    echo '<td sorttable_customkey="1"><span class="fa fa-leaf"></span></td>';
+                } else {
+                    echo '<td sorttable_customkey="0"></td>';
+                }
+                ?>
                 <td class="hidden-xs">{{ $c->member->name }}</td>
             </tr>
         @endforeach
