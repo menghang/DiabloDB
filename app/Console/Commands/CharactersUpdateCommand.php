@@ -43,7 +43,6 @@ class CharactersUpdateCommand extends Command
 
         foreach ($characters as $char)
         {
-            $char_id = $char->id;
             $member = $char->member;
             $command = new CharacterUpdate($char, $member);
             $command->handle();
