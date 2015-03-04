@@ -25,7 +25,7 @@ class Character extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'level'];
+    protected $fillable = ['name', 'level', 'owner_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
