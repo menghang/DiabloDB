@@ -3,22 +3,22 @@
   color: #ecf0f1; }
 
 .monk {
-  background-color: #9d722d; }
+  background-color: #a1723a; }
 
 .wizard {
-  background-color: #232b36; }
+  background-color: #2d6bb8; }
 
 .demon-hunter {
-  background-color: #322630; }
+  background-color: #663e7d; }
 
 .barbarian {
-  background-color: #442e23; }
+  background-color: #9e401c; }
 
 .witch-doctor {
-  background-color: #9c6f2b; }
+  background-color: #6ba537; }
 
 .crusader {
-  background-color: #cdc4b3; }
+  background-color: #a29512; }
 
 .widget:nth-child(3n-1) .widget-inner {
   background-color: #9b59b6; }
