@@ -44,27 +44,18 @@ Under 'battlenet':
 
 There are several options for updating members and characters: Cron, Queue, Manual
 
-### Cron ###
-
-> In the config/diablo.php file there are some settings for scheduling characters and members updating, to make these work you will need to add a cron job on your server to run the following
-> 
-> `* * * * * bash -c "cd /path/to/diablodb && php artisan schedule:run"`
-> 
-> valid options for the config file are:
-> 
-> * everyFiveMinutes
-> * everyTenMinutes
-> * everyThirtyMinutes
-> * hourly
-> * daily
-> * weekly
-> * monthly
-> * yearly
-
-### Queue ###
-
-> TBC
-
 ### Manual ###
 
-> Members and Characters updates can be triggered manually.  However we recommend using either a cron or queue for general hourly/daily updating etc 
+> Currently only the manual method for updating members/characters has been tested, use the steps below to do this.
+>
+> To update members (which adds members characters to the database)
+>
+> <code>php artisan members:update</code>
+>
+> This will call the battlenet api with the members battletags and return data such as paragon levels, characters, etc.
+>
+> Following this you can then call
+>
+> <code>php artisan characters:update</code>
+>
+> Which will update each character individually and update their stats (health, damage, gold find, etc).
