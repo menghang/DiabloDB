@@ -40,4 +40,13 @@ class HomeController extends Controller
         ];
         return view('home', $data);
     }
+
+    public function profile()
+    {
+        $data = [
+            'sitename' => \Config::get('diablo.sitename'),
+            'user' => Auth::user()
+        ];
+        return view('user/home', $data);
+    }
 }

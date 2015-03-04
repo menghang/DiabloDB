@@ -20,6 +20,7 @@ Route::get('admin', 'AdminController@index');
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::get('logout', 'Auth\AuthController@getLogout');
 Route::get('register', 'Auth\AuthController@getRegister');
+Route::get('profile', 'HomeController@profile');
 
 Route::get('character/{$name}', 'CharacterController@view');
 
