@@ -52,7 +52,7 @@ class Character extends Model
 
         /* Check if character already exists */
         try {
-            $character = Character::where('name', $data['name'])->firstOrFail();
+            $character = Character::where('diablo_id', $char['diablo_id'])->firstOrFail();
             /* Character Exists - Update */
             foreach($char as $key => $val) {
                 $character->$key = $val;
