@@ -33,7 +33,7 @@
                     echo '<td sorttable_customkey="0"></td>';
                 }
                 ?>
-                <td class="hidden-xs">{{ $c->stats->damage }}</td>
+                <td class="hidden-xs">{{ number_format($c->stats->damage) }}</td>
                 <td class="hidden-xs">{{ $c->member->name }}</td>
             </tr>
         @endforeach
