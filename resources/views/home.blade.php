@@ -10,6 +10,7 @@
                 <th>Level</th>
                 <th><abbr title="Hardcore!">HC</abbr></th>
                 <th>Seasonal</th>
+                <th class="hidden-xs">Damage</th>
                 <th class="hidden-xs">Owner</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                     echo '<td sorttable_customkey="0"></td>';
                 }
                 ?>
+                <td class="hidden-xs">{{ $c->stats->damage }}</td>
                 <td class="hidden-xs">{{ $c->member->name }}</td>
             </tr>
         @endforeach
