@@ -1,5 +1,6 @@
 <?php namespace DiabloDB\Commands;
 
+use DiabloDB\CharacterStats;
 use DiabloDB\Commands\Command;
 use DiabloDB\Battlenet\Api;
 use DiabloDB\Member;
@@ -44,7 +45,12 @@ class MemberUpdate extends Command implements SelfHandling
         foreach($characters as $char) {
             $char['class'] = $charClass->getClassId($char['class']);
             $char['owner_id'] = $member->id;
-            Character::CreateOrUpdate($char);
+            $char_id = Character::CreateOrUpdate($char);
+            /* Also create a stats entry so that we can use eager loading (join) - without losing characters */
+            $data = [
+                'character_id' => $char_id
+            ];
+            CharacterStats::CreateOrUpdate($data);
         }
     }
 }
