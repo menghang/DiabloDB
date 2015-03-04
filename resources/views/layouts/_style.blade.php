@@ -6,6 +6,6 @@ $styles = [
         'diablodb',
 ];
 ?>
-@foreach($styles as $js)
-    <link rel="stylesheet" href="assets/css/{{ $js }}.css" />
+@foreach($styles as $css)
+    <link rel="stylesheet" href="{{ asset('assets/css/'.$css.'.css') }}" />
 @endforeach
