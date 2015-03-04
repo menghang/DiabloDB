@@ -35,6 +35,7 @@ class AdminController extends Controller
 
         $data = [
             'user' => Auth::user(),
+            'sitename' => \Config::get('diablo.sitename'),
             'dashboard' => [
                 'counters' => [
                     'users'      => ['title' => 'Users', 'value' => $userCount, 'url' => ''],
@@ -54,6 +55,7 @@ class AdminController extends Controller
     {
         $data = [
             'user' => Auth::user(),
+            'sitename' => \Config::get('diablo.sitename'),
             'fields' => [
                 'name' => ['type' => 'text', 'min' => 2, 'max' => 30],
                 'battletag' => ['type' => 'text', 'min' => 4, 'max' => 20],
