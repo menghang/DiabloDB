@@ -38,6 +38,11 @@ class Character extends Model
         return $this->belongsTo('DiabloDB\Member', 'owner_id');
     }
 
+    public function stats()
+    {
+        return $this->hasMany('DiabloDB\CharacterStats', 'character_id');
+    }
+
     public static function CreateOrUpdate($data)
     {
         $char = [
