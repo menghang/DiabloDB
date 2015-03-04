@@ -43,6 +43,11 @@ class Character extends Model
         return $this->hasMany('DiabloDB\CharacterStats', 'character_id');
     }
 
+    /**
+     * Creates or updates a character
+     * @param array $data Array of fields.
+     * @return null|integer Returns the character id on success or null.
+     */
     public static function CreateOrUpdate($data)
     {
         $char = [
@@ -63,9 +68,18 @@ class Character extends Model
                 $character->$key = $val;
             }
             $character->save();
+            return $character->id;
         } catch (ModelNotFoundException $e) {
             /* Does not exist - Add */
             Character::create($char);
+
+            /* Return the created characters id */
+            try {
+                $character = Character::where('diablo_id', $char['diablo_id'])->firstOrFail();
+                return $character->id;
+            } catch (Exception $e) {
+                return null;
+            }
         } catch (Exception $e) {
             \Log::error($e->getMessage());
         }
