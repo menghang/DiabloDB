@@ -40,6 +40,7 @@ class MemberUpdate extends Command implements SelfHandling
         /* Update members characters */
         $characters = $data['heroes'];
         foreach($characters as $char) {
+            $char['owner_id'] = $member->id;
             Character::CreateOrUpdate($char);
         }
     }
