@@ -56,7 +56,7 @@ class CharacterUpdate extends Command implements SelfHandling
         $stats = [];
         $stats['character_id'] = $this->character->id;
         $stats['elite_kills'] = $data['kills']['elites'];
-        $stats['health'] = $data['stats']['life'];
+        $stats['life'] = $data['stats']['life'];
         $stats['damage'] = $data['stats']['damage'];
         $stats['toughness'] = $data['stats']['toughness'];
         $stats['healing'] = $data['stats']['healing'];
