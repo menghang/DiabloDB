@@ -3,6 +3,8 @@
 namespace DiabloDB\Console\Commands;
 
 use Illuminate\Console\Command;
+use DiabloDB\Character;
+use DiabloDB\Commands\CharacterUpdate;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
@@ -37,7 +39,15 @@ class CharactersUpdateCommand extends Command
     */
     public function fire()
     {
+        $characters = Character::all();
 
+        foreach ($characters as $char)
+        {
+            $char_id = $char->id;
+            $member = $char->member;
+            $command = new CharacterUpdate($char, $member);
+            $command->handle();
+        }
     }
 
     /**
