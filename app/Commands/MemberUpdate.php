@@ -44,7 +44,6 @@ class MemberUpdate extends Command implements SelfHandling
         foreach($characters as $char) {
             $char['class'] = $charClass->getClassId($char['class']);
             $char['owner_id'] = $member->id;
-            dd($char);
             Character::CreateOrUpdate($char);
         }
     }
