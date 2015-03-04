@@ -4,6 +4,7 @@ namespace DiabloDB\Http\Controllers;
 
 use \Auth;
 use DiabloDB\Character;
+use DiabloDB\Diablo\CharacterClass;
 
 class HomeController extends Controller
 {
@@ -38,7 +39,8 @@ class HomeController extends Controller
         $data = [
             'sitename' => \Config::get('diablo.sitename'),
             'characters' => Character::with('member')->get(),
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'ClassHelper' => new CharacterClass()
         ];
         return view('home', $data);
     }
