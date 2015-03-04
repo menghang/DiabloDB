@@ -10,6 +10,7 @@ class CharacterClass
         3 => ['api_name' => 'wizard', 'display' => 'Wizard'],
         4 => ['api_name' => 'monk', 'display' => 'Monk'],
         5 => ['api_name' => 'crusader', 'display' => 'Crusader'],
+        6 => ['api_name' => 'witch-doctor', 'display' => 'Witch Doctor'],
     ];
 
     public function getClassId($class)
