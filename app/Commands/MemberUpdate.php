@@ -4,6 +4,7 @@ use DiabloDB\Commands\Command;
 use DiabloDB\Battlenet\Api;
 use DiabloDB\Member;
 use DiabloDB\Character;
+use DiabloDB\Diablo\CharacterClass;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class MemberUpdate extends Command implements SelfHandling
@@ -39,8 +40,11 @@ class MemberUpdate extends Command implements SelfHandling
 
         /* Update members characters */
         $characters = $data['heroes'];
+        $charClass = new CharacterClass();
         foreach($characters as $char) {
+            $char['class'] = $charClass->getClassId($char['class']);
             $char['owner_id'] = $member->id;
+            dd($char);
             Character::CreateOrUpdate($char);
         }
     }
