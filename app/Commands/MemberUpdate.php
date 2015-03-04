@@ -43,9 +43,7 @@ class MemberUpdate extends Command implements SelfHandling
         $charClass = new CharacterClass();
         foreach($characters as $char) {
             $char['class'] = $charClass->getClassId($char['class']);
-            $char['diablo_id'] = $char['id'];
             $char['owner_id'] = $member->id;
-            $char['season'] = $char['seasonal'];
             Character::CreateOrUpdate($char);
         }
     }

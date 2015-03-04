@@ -42,9 +42,12 @@ class Character extends Model
     {
         $char = [
             'name' => $data['name'],
+            'class' => $data['class'],
             'diablo_id' => $data['id'],
             'level' => $data['level'],
             'hardcore' => ($data['hardcore'] == "true"),
+            'season' => ($data['seasonal'] == "true"),
+            'owner_id' => $data['owner_id']
         ];
 
         /* Check if character already exists */
