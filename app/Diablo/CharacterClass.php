@@ -22,6 +22,7 @@ class CharacterClass
                 return $id;
             }
         }
+        return 0;
     }
 
     public function getClassName($class_id, $display = true)
