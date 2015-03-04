@@ -1,21 +1,14 @@
-@extends('app')
+@extends('layouts/master')
 
 @section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Home</div>
-
-                <div class="panel-body">
-                    Welcome {{ $user->name }}!
-                    @if($user->isAdmin())
-                        You are an admin!
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    @if(isset($characters))
+        <table class="table table-responsive">
+        <thead>
+            <tr><th>Character</th><th>Level</th><th>Class</th></tr>
+        </thead>
+        @foreach($characters as $c)
+            <tr><td>{{ $c->name }}</td><td>{{ $c->level }}</td><td>{{ $c->class }}</td><td>{{ $c }}</td></tr>
+        @endforeach
+        </table>
+    @endif
 @endsection
