@@ -39,7 +39,8 @@
     text-align: center; }
   .widget .widget-value {
     float: left;
-    font-size: 1.4em; }
+    font-size: 1.4em;
+    font-weight: bold; }
   .widget .widget-inner {
     margin: 4px;
     padding: 12px; }
