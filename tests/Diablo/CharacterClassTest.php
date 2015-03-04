@@ -15,7 +15,8 @@ class CharacterClassTest extends TestCase
             2 => 'demon-hunter',
             3 => 'wizard',
             4 => 'monk',
-            5 => 'crusader'
+            5 => 'witch-doctor',
+            6 => 'crusader'
         ];
         $this->class = new CharacterClass();
     }
