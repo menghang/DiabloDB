@@ -13,17 +13,39 @@
 .crusader { background-color: $crusader; }
 
 .widget:nth-child(3n-1) {
-  background-color: $flat_ui_amethyst;
+  .widget-inner {
+    background-color: $flat_ui_amethyst;
+  }
 }
 .widget:nth-child(3n-2) {
-  background-color: $flat_ui_belize_hole;
+  .widget-inner {
+    background-color: $flat_ui_belize_hole;
+  }
 }
 .widget:nth-child(3n-3) {
-  background-color: $flat_ui_green_sea;
+  .widget-inner {
+    background-color: $flat_ui_green_sea;
+  }
 }
 
 .widget {
   color: $flat_ui_clouds;
+  .widget-title {
+    float: left;
+    font-size: 1.2em;
+  }
+  .widget-title, .widget-value {
+    width: 100%;
+    text-align: center;
+  }
+  .widget-value {
+    float: left;
+    font-size: 1.4em;
+  }
+  .widget-inner {
+    margin: 4px;
+    padding: 12px;
+  }
 }
 
 
