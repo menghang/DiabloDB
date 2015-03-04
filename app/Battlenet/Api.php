@@ -43,7 +43,6 @@ class Api
      */
     private function buildProfileUrl($btag)
     {
-        $btag = urlencode($btag);
         $url = $this->buildBaseUrl();
         $url .= "profile/{$btag}/?locale={$this->locale}&apikey={$this->api_key}";
         return $url;
@@ -77,12 +76,14 @@ class Api
      */
     public function getProfileInfo($btag)
     {
+        $btag = urlencode($btag);
         $url = $this->buildProfileUrl($btag);
         return $this->requestJson($url);
     }
 
     public function getCharacterInfo($btag, $id)
     {
+        $btag = urlencode($btag);
         $url = $this->buildCharUrl($btag, $id);
         return $this->requestJson($url);
     }
