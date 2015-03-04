@@ -38,7 +38,7 @@ class HomeController extends Controller
     {
         $data = [
             'sitename' => \Config::get('diablo.sitename'),
-            'characters' => Character::with('member')->get(),
+            'characters' => Character::with('member', 'stats')->get(),
             'user' => Auth::user(),
             'ClassHelper' => new CharacterClass()
         ];
