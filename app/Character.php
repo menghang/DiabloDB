@@ -40,7 +40,7 @@ class Character extends Model
 
     public function stats()
     {
-        return $this->hasMany('DiabloDB\CharacterStats', 'character_id');
+        return $this->hasOne('DiabloDB\CharacterStats', 'character_id');
     }
 
     /**
