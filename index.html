@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>diablodb by taskforcedev</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>diablodb</h1>
+        <h2>A character database for Diablo 3 aimed towards clans and communities.  Written in Laravel 5, uses bootstrap.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/taskforcedev/DiabloDB/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/taskforcedev/DiabloDB/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/taskforcedev/DiabloDB" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="diablodb" class="anchor" href="#diablodb" aria-hidden="true"><span class="octicon octicon-link"></span></a>DiabloDB</h1>
+
+<p><a href="https://scrutinizer-ci.com/g/taskforcedev/DiabloDB/?branch=master"><img src="https://scrutinizer-ci.com/g/taskforcedev/DiabloDB/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://www.codacy.com/public/taskforce2eu/DiabloDB"><img src="https://www.codacy.com/project/badge/670448d59df045c783baee6735870004" alt="Codacy Badge"></a>
+<a href="https://travis-ci.org/taskforcedev/DiabloDB"><img src="https://travis-ci.org/taskforcedev/DiabloDB.svg?branch=master" alt="Build Status"></a></p>
+
+<p>DiabloDB is a character database aimed at clans and communities which lists characters in a sortable/filterable list.</p>
+
+<h2>
+<a id="project-status" class="anchor" href="#project-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project Status</h2>
+
+<p>DEVELOPMENT - We do not currently recommend using the application on live servers, though testing would be appreciated.</p>
+
+<p>This project is still in the relatively early stages of development, if you would like to help contribute please get in touch.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>Documentation can also be found <a href="http://diablodb.readthedocs.org/">here</a></p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>The database uses Laravel framework so the requirements of that apply, we recommend a minimum of PHP 5.5</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ul>
+<li>Download the files to the appropriate root folder</li>
+<li>Run a "composer install" to get required dependencies.</li>
+<li>Create a .env file (copy .env.example and copy in your db details) or you can edit app/config/database.php if required.</li>
+<li>run "php artisan migrate"</li>
+<li>run "php artisan db:seed"</li>
+<li>Open the app in your browser and go to /register and create your account.</li>
+<li>run "php artisan role:assign" select your user account and the administrator role (should be 2).</li>
+</ul>
+
+<p>At this point you should be set up as an administrator on the application, please visit /admin to test this step worked.</p>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>Open up config/diablo.php</p>
+
+<p>Under 'battlenet':</p>
+
+<ul>
+<li>Edit the sitename to your community name (or whatever you would like to appear in the header).</li>
+<li>Check your region and locale settings.</li>
+<li>Enter your API Key (which can be obtained by registering on the blizzard dev portal <a href="https://dev.battle.net/">here</a> if you do not already have one)</li>
+</ul>
+
+<h2>
+<a id="updating-memberscharacters" class="anchor" href="#updating-memberscharacters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating Members/Characters</h2>
+
+<p>There are several options for updating members and characters: Cron, Queue, Manual</p>
+
+<h3>
+<a id="manual" class="anchor" href="#manual" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manual</h3>
+
+<blockquote>
+<p>Currently only the manual method for updating members/characters has been tested, use the steps below to do this.</p>
+
+<p>To update members (which adds members characters to the database)</p>
+
+<p><code>php artisan members:update</code></p>
+
+<p>This will call the battlenet api with the members battletags and return data such as paragon levels, characters, etc.</p>
+
+<p>Following this you can then call</p>
+
+<p><code>php artisan characters:update</code></p>
+
+<p>Which will update each character individually and update their stats (health, damage, gold find, etc).</p>
+</blockquote>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
