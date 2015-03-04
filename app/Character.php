@@ -4,7 +4,6 @@ namespace DiabloDB;
 
 use Illuminate\Database\Eloquent\Model;
 use Exception;
-use DiabloDB\Member;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
@@ -36,7 +35,7 @@ class Character extends Model
 
     public function member()
     {
-        return $this->belongsTo('Member');
+        return $this->belongsTo('DiabloDB\Member', 'owner_id');
     }
 
     public static function CreateOrUpdate($data)
