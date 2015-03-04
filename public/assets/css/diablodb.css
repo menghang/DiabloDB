@@ -20,17 +20,29 @@
 .crusader {
   background-color: #cdc4b3; }
 
-.widget:nth-child(3n-1) {
+.widget:nth-child(3n-1) .widget-inner {
   background-color: #9b59b6; }
 
-.widget:nth-child(3n-2) {
+.widget:nth-child(3n-2) .widget-inner {
   background-color: #2980b9; }
 
-.widget:nth-child(3n-3) {
+.widget:nth-child(3n-3) .widget-inner {
   background-color: #16a085; }
 
 .widget {
   color: #ecf0f1; }
+  .widget .widget-title {
+    float: left;
+    font-size: 1.2em; }
+  .widget .widget-title, .widget .widget-value {
+    width: 100%;
+    text-align: center; }
+  .widget .widget-value {
+    float: left;
+    font-size: 1.4em; }
+  .widget .widget-inner {
+    margin: 4px;
+    padding: 12px; }
 
 /* jQuery UI Overrides */
 .btn-primary.ui-widget {
