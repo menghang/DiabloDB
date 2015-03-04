@@ -4,10 +4,24 @@
     @if(isset($characters))
         <table class="table table-responsive">
         <thead>
-            <tr><th>Character</th><th>Level</th><th>Class</th></tr>
+            <tr>
+                <th>Character</th>
+                <th>Class</th>
+                <th>Level</th>
+                <th><abbr title="Hardcore!">HC</abbr></th>
+                <th>Seasonal</th>
+                <th class="hidden-xs">Owner</th>
+            </tr>
         </thead>
         @foreach($characters as $c)
-            <tr><td>{{ $c->name }}</td><td>{{ $c->level }}</td><td>{{ $c->class }}</td><td>{{ $c }}</td></tr>
+            <tr class="{{ $ClassHelper->getClassName($c->class, false) }}">
+                <td>{{ $c->name }}</td>
+                <td>{{ $ClassHelper->getClassName($c->class) }}</td>
+                <td>{{ $c->level }}</td>
+                <td><?php if ($c->hardcore == 1) { echo '<span class="fa fa-h-square"></span>'; } ?></td>
+                <td><?php if ($c->season == 1) { echo '<span class="fa fa-leaf"></span>'; } ?></td>
+                <td class="hidden-xs">{{ $c->member->name }}</td>
+            </tr>
         @endforeach
         </table>
     @endif
