@@ -12,7 +12,7 @@ class CreateCharactersTable extends Migration
      */
     public function up()
     {
-        Schema::create('characters', function(Blueprint $table) {
+        Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('level');

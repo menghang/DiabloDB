@@ -1,11 +1,10 @@
 <?php namespace DiabloDB\Commands;
 
 use DiabloDB\Character;
-use DiabloDB\Battlenet\Api;
 use DiabloDB\CharacterStats;
-use DiabloDB\Commands\Command;
-
 use DiabloDB\Member;
+use DiabloDB\Battlenet\Api;
+use DiabloDB\Commands\Command;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 /**

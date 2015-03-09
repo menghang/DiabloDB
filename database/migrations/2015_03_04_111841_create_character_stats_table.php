@@ -12,7 +12,7 @@ class CreateCharacterStatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('character_stats', function(Blueprint $table) {
+        Schema::create('character_stats', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('character_id');
             $table->integer('elite_kills')->default(0);
