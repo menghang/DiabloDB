@@ -41,8 +41,7 @@ class CharactersUpdateCommand extends Command
     {
         $characters = Character::all();
 
-        foreach ($characters as $char)
-        {
+        foreach ($characters as $char) {
             $member = $char->member;
             $command = new CharacterUpdate($char, $member);
             $command->handle();
@@ -66,8 +65,8 @@ class CharactersUpdateCommand extends Command
     */
     protected function getOptions()
     {
-      return [
-        //array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
-      ];
+        return [
+            //array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
+        ];
     }
 }

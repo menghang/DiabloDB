@@ -64,7 +64,7 @@ class Character extends Model
         try {
             $character = Character::where('diablo_id', $char['diablo_id'])->firstOrFail();
             /* Character Exists - Update */
-            foreach($char as $key => $val) {
+            foreach ($char as $key => $val) {
                 $character->$key = $val;
             }
             $character->save();

@@ -4,5 +4,5 @@ namespace DiabloDB\Commands;
 
 abstract class Command
 {
-	//
+    //
 }

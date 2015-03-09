@@ -41,7 +41,7 @@ class ApiController extends Controller
      */
     public function validateFields($fields)
     {
-        foreach($fields as $f) {
+        foreach ($fields as $f) {
             if (!$this->request->has($f)) {
                 return false;
             }

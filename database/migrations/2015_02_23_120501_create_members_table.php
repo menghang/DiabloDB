@@ -34,5 +34,4 @@ class CreateMembersTable extends Migration
     {
         Schema::drop('members');
     }
-
 }

@@ -2,8 +2,14 @@
 
 namespace DiabloDB\Diablo;
 
+/**
+ * Class Season
+ *
+ * @package DiabloDB\Diablo
+ */
 class Season
 {
+    /** @var array $seasons A list of known seasons. */
     public $seasons = [
         0 => ['from' => '2012-05-15', 'to' => '2014-08-28'],
         1 => ['from' => '2014-08-29', 'to' => '2015-02-03'],
@@ -13,6 +19,13 @@ class Season
         ]
     ];
 
+    /**
+     * Get season by date or current.
+     *
+     * @param string|null $date Date to check (optional).
+     *
+     * @return int|null Returns the season id.
+     */
     public function getSeason($date = null)
     {
         if ($date == null) {
@@ -30,8 +43,15 @@ class Season
         return null;
     }
 
+    /**
+     * Get the current season id.
+     *
+     * @return int $season Season Number.
+     *
+     * @todo Consider value in grabbing this dynamically rather than via app updates.
+     */
     private function getCurrentSeason()
     {
-        return 2; // TODO: Consider value in grabbing this dynamically rather than via app updates.
+        return 2;
     }
 }

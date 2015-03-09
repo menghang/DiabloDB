@@ -1,7 +1,8 @@
-<?php namespace DiabloDB\Events;
+<?php
 
-abstract class Event {
+namespace DiabloDB\Events;
 
-	//
-
+abstract class Event
+{
+    //
 }

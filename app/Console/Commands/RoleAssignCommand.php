@@ -12,18 +12,10 @@ use DiabloDB\RoleMember;
 
 class RoleAssignCommand extends Command
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
+    /** @var string $name The console command name. */
     protected $name = 'role:assign';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
+    /** @var string $description The console command description. */
     protected $description = 'Assign users to a role - required for initial install.';
 
     /**
@@ -100,8 +92,7 @@ class RoleAssignCommand extends Command
     public function buildUserTable($users)
     {
         $user_data = [];
-        foreach($users as $user)
-        {
+        foreach ($users as $user) {
             $user_data[] = [$user->id, $user->name];
         }
         return $user_data;
@@ -131,8 +122,7 @@ class RoleAssignCommand extends Command
     public function buildRoleTable($roles)
     {
         $role_data = [];
-        foreach($roles as $r)
-        {
+        foreach ($roles as $r) {
             $role_data[] = [$r->id, $r->name];
         }
         return $role_data;

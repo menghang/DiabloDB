@@ -24,7 +24,7 @@ class CharacterStats extends Model
             $key = 'character_id';
             $stats = CharacterStats::where($key, $data[$key])->firstOrFail();
             /* Character Exists - Update */
-            foreach($data as $key => $val) {
+            foreach ($data as $key => $val) {
                 $stats->$key = $val;
             }
             $stats->save();

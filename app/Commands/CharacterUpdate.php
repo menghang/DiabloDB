@@ -10,15 +10,20 @@ use Illuminate\Contracts\Bus\SelfHandling;
 
 /**
  * Class CharacterUpdate
+ *
  * @package DiabloDB\Commands
  */
 class CharacterUpdate extends Command implements SelfHandling
 {
+    /** @var Character $character A DiabloDB Character */
     public $character;
+
+    /** @var Member $member A DiabloDB Member. */
     public $member;
 
     /**
      * Create a new command instance.
+     *
      * @param Character $character Character to update.
      * @param Member    $member    Member to which the character belongs.
      */
@@ -49,6 +54,7 @@ class CharacterUpdate extends Command implements SelfHandling
 
     /**
      * Update Stats.
+     *
      * @param array $data Array returned by diablo api.
      */
     public function updateStats($data)
