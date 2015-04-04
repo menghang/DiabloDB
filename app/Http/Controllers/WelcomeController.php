@@ -1,5 +1,7 @@
 <?php namespace DiabloDB\Http\Controllers;
 
+use DiabloDB\Character;
+
 class WelcomeController extends Controller
 {
     /**
@@ -22,7 +24,7 @@ class WelcomeController extends Controller
         $data = [
             'sitename' => \Config::get('diablo.sitename')
         ];
-        $characters = [];
+        $characters = Character::all();
         
         if (count($characters) === 0) {
             return view('welcome', $data);
