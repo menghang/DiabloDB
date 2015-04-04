@@ -90,6 +90,6 @@ class AdminController extends Controller
             'title' => 'Add Member',
             'characters' => Character::with('member')->get()
         ];
-        return view('admin/character/index', $data);
+        return view('admin/characters/index', $data);
     }
 }
