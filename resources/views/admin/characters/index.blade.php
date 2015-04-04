@@ -54,7 +54,10 @@
             ',
             'options' => [
                 'hide_default_buttons' => true
-            ]
+            ],
+            'footer_content' => '
+            <button class="btn btn-danger"><span class="fa fa-trash-o"></span> Delete!</button>
+            '
         ];
     ?>
     @include('layouts.bootstrap._modal', $characterDeleteModal)
