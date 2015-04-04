@@ -20,20 +20,20 @@
         <tr>
             <td>{{ $char->name }}</td>
             <td>{{ $char->level }}</td>
-            <?php if ($c->hardcore == 1) {
+            <?php if ($char->hardcore == 1) {
                 echo '<td sorttable_customkey="1"><span class="fa fa-h-square"></span></td>';
             } else {
                 echo '<td sorttable_customkey="0"></td>';
             }
             ?>
 
-            <?php if ($c->season == 1) {
+            <?php if ($char->season == 1) {
                 echo '<td sorttable_customkey="1"><span class="fa fa-leaf"></span></td>';
             } else {
                 echo '<td sorttable_customkey="0"></td>';
             }
             ?>
-            <td>{{ $c->member->name }}</td>
+            <td>{{ $char->member->name }}</td>
         </tr>
     @endforeach
     </tbody>
