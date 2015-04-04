@@ -1,5 +1,7 @@
 <?php namespace DiabloDB\Http\Controllers;
 
+use \Auth;
+use DiabloDB\Character;
 use DiabloDB\Member;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -47,5 +49,38 @@ class ApiController extends Controller
             }
         }
         return true;
+    }
+
+    public function deleteMember($id)
+    {
+        try {
+            $member = Member::where('id', $id)->firstOrFail();
+        } catch (\Exception $e) {
+            return response('Bad Request.', 400);
+        }
+
+        /* Is Admin? */
+        $user = Auth::user();
+        if (!$user->isAdmin()) {
+            return response('Unauthorized', 401);
+        }
+
+        $member->delete();
+    }
+
+    public function deleteCharacter($id)
+    {
+        try {
+            $character = Character::where('id', $id)->firstOrFail();
+        } catch (\Exception $e) {
+            return response('Bad Request.', 400);
+        }
+
+        /* Is Admin? or Character Owner */
+        $user = Auth::user();
+
+        if ($user->isAdmin() || $user->id == $character->member->id) {
+            $character->delete();
+        }
     }
 }
