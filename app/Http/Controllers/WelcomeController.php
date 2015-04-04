@@ -1,6 +1,7 @@
 <?php namespace DiabloDB\Http\Controllers;
 
 use DiabloDB\Character;
+use DiabloDB\Diablo\CharacterClass;
 
 class WelcomeController extends Controller
 {
