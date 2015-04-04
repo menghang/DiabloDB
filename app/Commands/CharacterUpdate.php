@@ -58,6 +58,10 @@ class CharacterUpdate extends Command implements SelfHandling
      */
     public function updateStats($data)
     {
+        if (!array_key_exists('kills', $data)) {
+            echo 'Unable to update character ' . $this->character->name;
+            return false;
+        }
         $stats = [];
         $stats['character_id'] = $this->character->id;
         $stats['elite_kills'] = $data['kills']['elites'];
