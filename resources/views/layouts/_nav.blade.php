@@ -26,6 +26,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/admin">Dashboard</a></li>
+                                    <li><a href="/admin/characters">Characters</a></li>
                                     <li><a href="/admin/members">Members</a></li>
                                 </ul>
                             </li>
