@@ -42,6 +42,22 @@
     @endforeach
     </tbody>
     </table>
+
+    <?php
+        $characterDeleteModal = [
+            'div_name' => 'characterDeleteModal',
+            'content' => '<p>Are you sure you wish to delete this character?</p>
+            <p>Character: <span id="deleteName"></span>.</p>
+            <p>Level: <span id="deleteLevel"></span>.</p>
+            <p>Hardcore: <span id="deleteHardcore"></span>.</p>
+            <p>Seasonal: <span id="deleteSeasonal"></span>.</p>
+            ',
+            'options' => [
+                'hide_default_buttons' => true
+            ]
+        ];
+    ?>
+    @include('layouts.bootstrap._modal', $characterDeleteModal)
 @endif
 
 @endsection
