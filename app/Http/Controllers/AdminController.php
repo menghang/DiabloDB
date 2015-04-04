@@ -69,4 +69,27 @@ class AdminController extends Controller
         ];
         return view('admin/members/index', $data);
     }
+
+    /**
+     * Character Listing
+     * @return \Illuminate\View\View
+     */
+    public function characters()
+    {
+        $data = [
+            'user' => Auth::user(),
+            'sitename' => \Config::get('diablo.sitename'),
+            'fields' => [
+                'name' => ['type' => 'text', 'min' => 2, 'max' => 30],
+                'battletag' => ['type' => 'text', 'min' => 4, 'max' => 20],
+            ],
+            'endpoint' => \URL::route('member.post'),
+            'container' => 'memberForm',
+            'success' => "location.reload();",
+            'button' => 'addMember',
+            'title' => 'Add Member',
+            'characters' => Character::with('member')->get()
+        ];
+        return view('admin/character/index', $data);
+    }
 }

@@ -28,6 +28,7 @@ Route::post('members', ['as' => 'member.post', 'uses' => 'ApiController@storeMem
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('members', ['as' => 'admin.member.list', 'uses' => 'AdminController@members']);
+    Route::get('characters', ['as' => 'admin.character.list', 'uses' => 'AdminController@characters']);
 });
 
 Route::controllers([
