@@ -29,8 +29,11 @@ class WelcomeController extends Controller
         if (count($characters) === 0) {
             return view('welcome', $data);
         } else {
-            $data['characters'] = $characters;
-            return view('index', $data);
+
+            $data['characters'] = Character::with('member', 'stats')->get();
+            $data['ClassHelper'] = new CharacterClass();
+            return view('home', $data);
+            //return view('index', $data);
         }
     }
 }
