@@ -36,7 +36,7 @@
             <td>{{ $char->member->name }}</td>
             <td>
                 <button class="btn btn-xs btn-primary"><span class="fa fa-pencil"></span> Edit</button>
-                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="characterDeleteModal"><span class="fa fa-trash-o"></span> Delete!</button>
+                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#characterDeleteModal"><span class="fa fa-trash-o"></span> Delete!</button>
             </td>
         </tr>
     @endforeach
