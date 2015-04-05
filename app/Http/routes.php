@@ -24,7 +24,10 @@ Route::get('profile', 'HomeController@profile');
 
 Route::get('character/{$name}', 'CharacterController@view');
 
+/* API */
 Route::post('members', ['as' => 'member.post', 'uses' => 'ApiController@storeMember']);
+Route::delete('characters/{id}', ['as' => 'character.delete', 'uses' => 'ApiController@deleteCharacter']);
+
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('members', ['as' => 'admin.member.list', 'uses' => 'AdminController@members']);

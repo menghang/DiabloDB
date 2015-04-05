@@ -85,7 +85,11 @@
             modal.find('#deleteSeasonal').text(charseasonal)
             modal.find('#deleteHardcore').text(charhc)
             modal.find('#deleteCharacter').on('click', function() {
-                console.log(charid);
+
+                /* Delete the Character */
+                $.post("/characters/" + charid, {"_method": "DELETE"}, function(data) {
+                    window.location.reload();
+                });
             });
         });
     </script>
