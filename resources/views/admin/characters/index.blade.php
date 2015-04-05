@@ -41,6 +41,7 @@
                         data-character-hardcore="<?php if ($char->hardcore === 1) { echo 'Yes'; } else { echo 'No'; } ?>"
                         data-character-seasonal="{{ $char->season }}"
                         data-character-level="{{ $char->level }}"
+                        data-character-id="{{ $char->id }}"
                         data-toggle="modal" data-target="#characterDeleteModal"><span class="fa fa-trash-o"></span> Delete!</button>
             </td>
         </tr>
@@ -61,7 +62,7 @@
                 'hide_default_buttons' => true
             ],
             'footer_content' => '
-            <button class="btn btn-danger"><span class="fa fa-trash-o"></span> Delete!</button>
+            <button id="deleteCharacter" class="btn btn-danger"><span class="fa fa-trash-o"></span> Delete!</button>
             '
         ];
     ?>
@@ -70,10 +71,12 @@
     <script>
         $('#characterDeleteModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
-            var charname = button.data('characterName') // Extract info from data-* attributes
-            var charlevel = button.data('characterLevel') // Extract info from data-* attributes
-            var charseasonal = button.data('characterSeasonal') // Extract info from data-* attributes
-            var charhc = button.data('characterHardcore') // Extract info from data-* attributes
+            // Extract info from data-* attributes
+            var charname = button.data('characterName')
+            var charlevel = button.data('characterLevel')
+            var charseasonal = button.data('characterSeasonal')
+            var charhc = button.data('characterHardcore')
+            var charid = button.data('characterId')
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this)
@@ -81,6 +84,9 @@
             modal.find('#deleteLevel').text(charlevel)
             modal.find('#deleteSeasonal').text(charseasonal)
             modal.find('#deleteHardcore').text(charhc)
+            modal.find('#deleteCharacter').on('click', function() {
+                console.log(charid);
+            });
         });
     </script>
 @endif
