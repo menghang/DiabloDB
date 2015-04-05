@@ -87,7 +87,7 @@
             modal.find('#deleteCharacter').on('click', function() {
 
                 /* Delete the Character */
-                $.post("/characters/" + charid, {"_method": "DELETE"}, function(data) {
+                $.post("/characters/" + charid, {"_method": "DELETE", "_token": "{{ csrf_token() }}}"}, function(data) {
                     window.location.reload();
                 });
             });
