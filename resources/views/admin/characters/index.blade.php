@@ -36,7 +36,12 @@
             <td>{{ $char->member->name }}</td>
             <td>
                 <button class="btn btn-xs btn-primary"><span class="fa fa-pencil"></span> Edit</button>
-                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#characterDeleteModal"><span class="fa fa-trash-o"></span> Delete!</button>
+                <button class="btn btn-xs btn-danger"
+                        data-character-name="{{ $char->name }}"
+                        data-character-hardcore="<?php if ($char->hardcore === 1) { echo 'Yes'; } else { echo 'No'; } ?>"
+                        data-character-seasonal="{{ $char->season }}"
+                        data-character-level="{{ $char->level }}"
+                        data-toggle="modal" data-target="#characterDeleteModal"><span class="fa fa-trash-o"></span> Delete!</button>
             </td>
         </tr>
     @endforeach
@@ -61,6 +66,23 @@
         ];
     ?>
     @include('layouts.bootstrap._modal', $characterDeleteModal)
+
+    <script>
+        $('#characterDeleteModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var charname = button.data('characterName') // Extract info from data-* attributes
+            var charlevel = button.data('characterLevel') // Extract info from data-* attributes
+            var charseasonal = button.data('characterSeasonal') // Extract info from data-* attributes
+            var charhc = button.data('characterHardcore') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('#deleteName').text(charname)
+            modal.find('#deleteLevel').text(charlevel)
+            modal.find('#deleteSeasonal').text(charseasonal)
+            modal.find('#deleteHardcore').text(charhc)
+        });
+    </script>
 @endif
 
 @endsection
