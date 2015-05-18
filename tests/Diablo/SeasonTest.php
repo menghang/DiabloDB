@@ -13,7 +13,7 @@ class SeasonTest extends TestCase
 
     public function test_get_season_returns_correct_season()
     {
-        $current_season = 2;
+        $current_season = 3;
         $season = $this->season->getSeason();
         $this->assertEquals($current_season, $season);
     }
