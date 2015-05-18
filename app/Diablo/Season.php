@@ -2,6 +2,8 @@
 
 namespace DiabloDB\Diablo;
 
+use \DateTime;
+
 /**
  * Class Season
  *
@@ -11,12 +13,10 @@ class Season
 {
     /** @var array $seasons A list of known seasons. */
     public $seasons = [
-        0 => ['from' => '2012-05-15', 'to' => '2014-08-28'],
-        1 => ['from' => '2014-08-29', 'to' => '2015-02-03'],
-        2 => [
-            'from' => '2015-02-13',
-            'to' => '2015-07-21' // NOTE: If S2 lasts same time as S1 then forcasted date would be 2015-07-21, using as placeholder
-        ]
+        0 => [ 'from' => '2012-05-15', 'to' => '2014-08-28' ],
+        1 => [ 'from' => '2014-08-29', 'to' => '2015-02-03' ],
+        2 => [ 'from' => '2015-02-13', 'to' => '2015-04-05' ],
+        3 => [ 'from' => '2015-04-10', 'to' => '2016-01-01'], // Placeholder end date for S3.
     ];
 
     /**
