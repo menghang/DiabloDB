@@ -52,6 +52,6 @@ class Season
      */
     private function getCurrentSeason()
     {
-        return 2;
+        return 3;
     }
 }
